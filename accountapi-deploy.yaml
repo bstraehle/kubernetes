@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accountapi-app-deploy
+  labels:
+    name: accountapi-app-deploy
+    app: accountapi-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: accountapi-app-pod
+      app: accountapi-app
+  template:
+    metadata:
+      name: accountapi-app-pod
+      labels:
+        name: accountapi-app-pod
+        app: accountapi-app
+    spec:
+      containers:
+        - name: accountapi-app
+          image: bstraehle/accountapi:v0.0.1
+          ports:
+            - containerPort: 80

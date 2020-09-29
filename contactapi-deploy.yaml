@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contactapi-app-deploy
+  labels:
+    name: contactapi-app-deploy
+    app: contactapi-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: contactapi-app-pod
+      app: contactapi-app
+  template:
+    metadata:
+      name: contactapi-app-pod
+      labels:
+        name: contactapi-app-pod
+        app: contactapi-app
+    spec:
+      containers:
+        - name: contactapi-app
+          image: bstraehle/contactapi:v0.0.1
+          ports:
+            - containerPort: 80
