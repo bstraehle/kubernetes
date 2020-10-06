@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mvcclient-app-deploy
+  name: mvcclient-deploy
   labels:
-    name: mvcclient-app-deploy
+    name: mvcclient-deploy
     app: mvcclient-app
 spec:
   replicas: 1
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: mvcclient-app
-          image: bstraehle/mvcclient:v0.0.1
+          image: bstraehle/mvcclient:1.0.0
           ports:
             - containerPort: 80

@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spaclient-app-deploy
+  name: spaclient-deploy
   labels:
-    name: spaclient-app-deploy
+    name: spaclient-deploy
     app: spaclient-app
 spec:
   replicas: 1
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: spaclient-app
-          image: bstraehle/spaclient:v0.0.1
+          image: bstraehle/spaclient:1.0.0
           ports:
             - containerPort: 80
