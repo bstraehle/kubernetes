@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mvcclient-deploy
+  name: mvcclient
   labels:
-    name: mvcclient-deploy
+    name: mvcclient
     app: mvcclient-app
 spec:
   replicas: 1

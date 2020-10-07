@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: contactapi-deploy
+  name: contactapi
   labels:
-    name: contactapi-deploy
+    name: contactapi
     app: contactapi-app
 spec:
   replicas: 1
