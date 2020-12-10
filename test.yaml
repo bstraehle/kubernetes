@@ -1,0 +1,446 @@
+openapi: 3.0.0
+info:
+  title: Hardware Security Module API
+  description: |-
+    API for the Thales / Gemalto / SafeNet Hardware Security Module (HSM). The HSM is configured for high availability (HA) using virtual partitions.
+
+    The API supports secure cryptography as well as secure storage and access of secrets. To create keys and secrets, the HSM CLI (command-line interface) is required.
+
+    Two-factor authentication (2FA) via client certificate and API key is required, except for the health resource.
+  version: '1'
+servers:
+- url: https://hsm.nonprod.corpint.net/hardwaresecuritymodule
+paths:
+  "/Decrypt":
+    post:
+      tags:
+      - Decrypt
+      operationId: Decrypt_Decrypt
+      parameters:
+      - type: string
+        name: HsmUserPin
+        in: header
+        description: The crypto user password
+        default: ''
+      - type: string
+        name: HsmPartition
+        in: header
+        description: The virtual or physical partition
+        default: Shared_Virtual
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/DecryptModel"
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/DecryptModel"
+        '400':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/DecryptModel"
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/DecryptModel"
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/DecryptModel"
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/DecryptModel"
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/DecryptModel"
+      security:
+      - HsmUserPin: []
+  "/Encrypt":
+    post:
+      tags:
+      - Encrypt
+      operationId: Encrypt_Encrypt
+      parameters:
+      - type: string
+        name: HsmUserPin
+        in: header
+        description: The crypto user password
+        default: ''
+      - type: string
+        name: HsmPartition
+        in: header
+        description: The virtual or physical partition
+        default: Shared_Virtual
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/EncryptModel"
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/EncryptModel"
+        '400':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/EncryptModel"
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/EncryptModel"
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/EncryptModel"
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/EncryptModel"
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/EncryptModel"
+      security:
+      - HsmUserPin: []
+  "/Health":
+    get:
+      tags:
+      - Health
+      operationId: Health_CheckHealth
+      parameters:
+      - type: string
+        name: HsmUserPin
+        in: header
+        description: The crypto user password
+        default: ''
+      - type: string
+        name: HsmPartition
+        in: header
+        description: The virtual or physical partition
+        default: Shared_Virtual
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HealthModel"
+        '400':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HealthModel"
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HealthModel"
+      security:
+      - HsmUserPin: []
+  "/Keys/{keyName}":
+    get:
+      tags:
+      - Keys
+      operationId: Keys_RetrieveKey
+      parameters:
+      - name: keyName
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - type: string
+        name: HsmUserPin
+        in: header
+        description: The crypto user password
+        default: ''
+      - type: string
+        name: HsmPartition
+        in: header
+        description: The virtual or physical partition
+        default: Shared_Virtual
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '400':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+      security:
+      - HsmUserPin: []
+  "/Keys":
+    post:
+      tags:
+      - Keys
+      operationId: Keys_RetrieveKey2
+      parameters:
+      - type: string
+        name: HsmUserPin
+        in: header
+        description: The crypto user password
+        default: ''
+      - type: string
+        name: HsmPartition
+        in: header
+        description: The virtual or physical partition
+        default: Shared_Virtual
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/KeyModel"
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '400':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/KeyModel"
+      security:
+      - HsmUserPin: []
+  "/Secrets/{secretName}":
+    get:
+      tags:
+      - Secrets
+      operationId: Secrets_RetrieveSecret
+      parameters:
+      - name: secretName
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: true
+        x-position: 1
+      - type: string
+        name: HsmUserPin
+        in: header
+        description: The crypto user password
+        default: ''
+      - type: string
+        name: HsmPartition
+        in: header
+        description: The virtual or physical partition
+        default: Shared_Virtual
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SecretModel"
+        '400':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SecretModel"
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SecretModel"
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SecretModel"
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SecretModel"
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SecretModel"
+      security:
+      - HsmUserPin: []
+components:
+  schemas:
+    DecryptModel:
+      allOf:
+      - "$ref": "#/components/schemas/BaseModel"
+      - type: object
+        additionalProperties: false
+        properties:
+          ivName:
+            type: string
+          keyName:
+            type: string
+          secretValueEncrypted:
+            type: string
+          outSecretValueDecrypted:
+            type: string
+            nullable: true
+    BaseModel:
+      type: object
+      additionalProperties: false
+      properties:
+        outMessage:
+          type: string
+          nullable: true
+    EncryptModel:
+      allOf:
+      - "$ref": "#/components/schemas/BaseModel"
+      - type: object
+        additionalProperties: false
+        properties:
+          ivName:
+            type: string
+          keyName:
+            type: string
+          secretValueDecrypted:
+            type: string
+          outSecretValueEncrypted:
+            type: string
+            nullable: true
+    HealthModel:
+      allOf:
+      - "$ref": "#/components/schemas/BaseModel"
+      - type: object
+        additionalProperties: false
+        properties:
+          outStatus:
+            type: string
+            nullable: true
+    KeyModel:
+      allOf:
+      - "$ref": "#/components/schemas/BaseModel"
+      - type: object
+        additionalProperties: false
+        properties:
+          ivName:
+            type: string
+            nullable: true
+          keyName:
+            type: string
+            nullable: true
+          outIvValue:
+            type: string
+            nullable: true
+          outKeyValue:
+            type: string
+            nullable: true
+    SecretModel:
+      allOf:
+      - "$ref": "#/components/schemas/BaseModel"
+      - type: object
+        additionalProperties: false
+        properties:
+          secretName:
+            type: string
+          outSecretValue:
+            type: string
+            nullable: true
+  securitySchemes:
+    HsmUserPin:
+      type: apiKey
+      description: The crypto user password
+      name: HsmUserPin
+      in: header
