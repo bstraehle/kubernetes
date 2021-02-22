@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mvcclient
+  name: mvc-app
   labels:
-    name: mvcclient
-    app: mvcclient-app
+    name: mvc-app
+    app: mvc-app-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: mvcclient-app-pod
-      app: mvcclient-app
+      name: mvc-app-app-pod
+      app: mvc-app-app
   template:
     metadata:
-      name: mvcclient-app-pod
+      name: mvc-app-app-pod
       labels:
-        name: mvcclient-app-pod
-        app: mvcclient-app
+        name: mvc-app-app-pod
+        app: mvc-app-app
     spec:
       containers:
-        - name: mvcclient-app
-          image: bstraehle/mvcclient:1.0.0
+        - name: mvc-app-app
+          image: bstraehle/mvc-app:1.0.0
           ports:
             - containerPort: 80
