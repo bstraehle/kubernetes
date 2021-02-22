@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spaclient
+  name: spa-app
   labels:
-    name: spaclient
-    app: spaclient-app
+    name: spa-app
+    app: spa-app-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: spaclient-app-pod
-      app: spaclient-app
+      name: spa-app-app-pod
+      app: spa-app-app
   template:
     metadata:
-      name: spaclient-app-pod
+      name: spa-app-app-pod
       labels:
-        name: spaclient-app-pod
-        app: spaclient-app
+        name: spa-app-app-pod
+        app: spa-app-app
     spec:
       containers:
-        - name: spaclient-app
-          image: bstraehle/spaclient:1.0.0
+        - name: spa-app-app
+          image: bstraehle/spa-app:1.0.0
           ports:
             - containerPort: 80
