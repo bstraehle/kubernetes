@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: contactapi-service
+  name: contact-api-service
   labels:
-    name: contactapi-service
-    app: contactapi-app
+    name: contact-api-service
+    app: contact-api-app
 spec:
   type: ClusterIP
   ports:
     - port: 8003
       targetPort: 80
   selector:
-    name: contactapi-app-pod
-    app: contactapi-app
+    name: contact-api-app-pod
+    app: contact-api-app
