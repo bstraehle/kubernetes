@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: accountapi
+  name: account-api
   labels:
     name: account-api
     app: account-api-app
