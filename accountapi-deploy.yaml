@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   name: accountapi
   labels:
-    name: accountapi
-    app: accountapi-app
+    name: account-api
+    app: account-api-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: accountapi-app-pod
-      app: accountapi-app
+      name: account-api-app-pod
+      app: account-api-app
   template:
     metadata:
-      name: accountapi-app-pod
+      name: account-api-app-pod
       labels:
-        name: accountapi-app-pod
-        app: accountapi-app
+        name: account-api-app-pod
+        app: account-api-app
     spec:
       containers:
-        - name: accountapi-app
-          image: bstraehle/accountapi:1.0.0
+        - name: account-api-app
+          image: bstraehle/account-api:1.0.0
           ports:
             - containerPort: 80
