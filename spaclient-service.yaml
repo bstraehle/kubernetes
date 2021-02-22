@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spaclient-service
+  name: spa-app-service
   labels:
-    name: spaclient-service
-    app: spaclient-app
+    name: spa-app-service
+    app: spa-app-app
 spec:
   type: LoadBalancer
   ports:
     - port: 8080
       targetPort: 80
   selector:
-    name: spaclient-app-pod
-    app: spaclient-app
+    name: spa-app-app-pod
+    app: spa-app-app
