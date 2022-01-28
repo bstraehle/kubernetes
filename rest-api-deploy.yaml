@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-api
+  labels:
+    name: rest-api
+    app: rest-api-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: rest-api-app-pod
+      app: rest-api-app
+  template:
+    metadata:
+      name: rest-api-app-pod
+      labels:
+        name: rest-api-app-pod
+        app: rest-api-app
+    spec:
+      containers:
+        - name: rest-api-app
+          image: bstraehle/rest-api:latest
+          ports:
+            - containerPort: 80
