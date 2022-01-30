@@ -35,6 +35,6 @@ kubectl get deployments,services
 **Useful Links:**  
 
 - Free O'Reilly eBook (email address required): <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes">Production Kubernetes</a>  
-- Video (25 min.): <a href="https://www.youtube.com/watch?v=BE77h7dmoQU">Official Kubernetes Documentary - Part 1</a>  
+- Video (25 min.): <a href="https://www.youtube.com/watch?v=BE77h7dmoQU">Kubernetes Documentary - Part 1/2</a>  
 - <a href="https://betterprogramming.pub/10-antipatterns-for-kubernetes-deployments-e97ce1199f2d">10 Anti-Patterns for Kubernetes Deployments</a>  
 - <a href="https://codefresh.io/containers/docker-anti-patterns/">Docker Anti-Patterns</a>  
