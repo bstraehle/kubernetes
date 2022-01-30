@@ -3,7 +3,8 @@ Create Google Kubernetes Engine (GKE) cluster:
 - Create Project  
 - Enable Kubernetes Engine API  
 - Create Kubernetes Cluster  
-- Connect (Open Cloud Shell)  
+- Connect / Open Cloud Shell  
+- (When done: Shut down Project)  
 ```
 gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
 ```
@@ -16,7 +17,8 @@ Create Azure Kubernetes Service (AKS) cluster:
 - Log into Azure Portal  
 - Create Resource Group  
 - Create Kubernetes Service  
-- Connect (Open Cloud Shell)  
+- Connect / Open Cloud Shell  
+- (When done: Delete Resource Group)  
 ```
 az account set --subscription <subscription>  
 az aks get-credentials --resource-group <resource-group> --name <name>  
