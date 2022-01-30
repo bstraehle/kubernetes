@@ -8,7 +8,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8001
+    - name: http-rest-api-service
+      port: 8001
       targetPort: 80
   selector:
     name: rest-api-app-pod
