@@ -1,16 +1,20 @@
-**Google Kubernetes Engine:**  
+**Google Kubernetes Engine (GKE):**  
 
+- ...  
+
+```
 ...  
+```
 
----
+**Elastic Kubernetes Service (EKS):**  
 
-**Elastic Kubernetes Service:**  
+- ...  
 
+```
 ...  
+```
 
----
-
-**Azure Kubernetes Service:**  
+**Azure Kubernetes Service (AKS):**  
 
 - Log into Azure Portal  
 - Create Resource Group  
@@ -22,7 +26,7 @@ az account set --subscription <subscription>
 az aks get-credentials --resource-group <resource-group> --name <name>  
 ```
 
----
+**GKE, EKS, and AKS:**  
 
 ```
 git clone https://github.com/bstraehle/kubernetes.git  
@@ -34,7 +38,11 @@ kubectl create -f mvc-app-service.yaml
 kubectl get deployments,services  
 ```
 
-**URL:** &lt;external-ip&gt;:&lt;port&gt;  
+**URL:**  
+
+```
+<external-ip>:<port>  
+```
 
 ---
 
