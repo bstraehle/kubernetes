@@ -6,7 +6,7 @@
 
 ...  
 
-**Azure Kubernetes Service:**
+**Azure Kubernetes Service:**  
 
 - Log into portal.azure.com  
 - Create Resource Group  
@@ -29,3 +29,11 @@ kubectl get deployments,services
 ---
 
 **URL:** &lt;external-ip&gt;:&lt;port&gt;  
+
+---
+
+**Useful Links:**  
+
+- <a href="https://betterprogramming.pub/10-antipatterns-for-kubernetes-deployments-e97ce1199f2d">10 Anti-Patterns for Kubernetes Deployments</a>  
+- <a href="https://codefresh.io/containers/docker-anti-patterns/">Docker Anti-Patterns</a>  
+- <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes">O'Reilly eBook: Production Kubernetes</a>  
