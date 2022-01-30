@@ -8,7 +8,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 8000
+    - name: http-mvc-app-service
+      port: 8000
       targetPort: 80
   selector:
     name: mvc-app-app-pod
