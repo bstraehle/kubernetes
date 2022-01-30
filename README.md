@@ -1,6 +1,7 @@
 Create Google Kubernetes Engine (GKE) cluster:  
 - Log into Google Cloud Console  
 - Create Project  
+- Enable Kubernetes Engine API  
 - Create Kubernetes Cluster  
 - Connect (Open Cloud Shell)  
 ```
