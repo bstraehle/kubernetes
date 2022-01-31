@@ -10,9 +10,8 @@ gcloud container clusters get-credentials <cluster> --zone <zone> --project <pro
 ```
 Create Elastic Kubernetes Service (EKS) cluster:  
 - Log into AWS Management Console  
-- Selection a region which supports CloudShell  
 - Create Kubernetes Cluster  
-- ...  
+- Open CloudShell (not available in all regions)  
 - ...  
 ```
 ...  
