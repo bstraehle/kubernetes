@@ -12,7 +12,7 @@ Create Elastic Kubernetes Service (EKS) cluster:
 - Log into AWS CloudShell  
 - Install kubectl  
 - Install eksctl  
-- (When done: Delete EKS cluster and ELB)
+- (When done: Delete EKS cluster and ELB load balancer)  
 ```
 eksctl create cluster --name <name> --region <region>  
 ```
