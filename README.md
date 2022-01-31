@@ -9,6 +9,10 @@ Create Google Kubernetes Engine (GKE) cluster:
 gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
 ```
 Create Elastic Kubernetes Service (EKS) cluster:  
+- Log into AWS Management Console  
+- Selection a region which supports CloudShell  
+- Create Kubernetes Cluster  
+- ...  
 - ...  
 ```
 ...  
