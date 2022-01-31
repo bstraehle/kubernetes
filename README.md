@@ -15,6 +15,7 @@ Create Elastic Kubernetes Service (EKS) cluster:
 - (When done: Delete EKS cluster and ELB load balancer)  
 ```
 eksctl create cluster --name <name> --region <region>  
+#eksctl delete cluster --name <name> --region <region>  
 ```
 Create Azure Kubernetes Service (AKS) cluster:  
 - Log into Azure Portal  
