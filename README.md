@@ -46,4 +46,5 @@ Useful Links:
 - Video (32 min): <a href="https://www.youtube.com/watch?v=318elIq37PE">Kubernetes Documentary - Part 2/2</a>  
 - <a href="https://betterprogramming.pub/10-antipatterns-for-kubernetes-deployments-e97ce1199f2d">10 Anti-Patterns for Kubernetes Deployments</a>  
 - <a href="https://codefresh.io/containers/docker-anti-patterns/">Docker Anti-Patterns</a>  
+- Free courses: <a href="https://kube.academy/">KubeAcademy</a>  
 - Free O'Reilly eBook (email address required): <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes">Production Kubernetes</a>  
