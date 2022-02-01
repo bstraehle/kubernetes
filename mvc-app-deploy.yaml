@@ -23,3 +23,6 @@ spec:
           image: bstraehle/mvc-app:latest
           ports:
             - containerPort: 80
+          env:
+          - name: DEMO_API_HOST
+            value: "http://rest-api-service.default.svc.cluster.local:8001"
