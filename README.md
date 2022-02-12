@@ -1,5 +1,5 @@
 Create Google Kubernetes Engine (GKE) cluster:  
-- Log into Google Cloud Console  
+- Login to Google Cloud Console  
 - Create Project  
 - Enable Kubernetes Engine API  
 - Create Kubernetes Cluster  
@@ -9,7 +9,7 @@ Create Google Kubernetes Engine (GKE) cluster:
 gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
 ```
 Create Elastic Kubernetes Service (EKS) cluster:  
-- Log into AWS CloudShell  
+- Login to AWS CloudShell  
 - Install kubectl  
 - Install eksctl  
 - (When done: Delete EKS cluster and ELB load balancer)  
@@ -18,7 +18,7 @@ eksctl create cluster --name <name> --region <region>
 #eksctl delete cluster --name <name> --region <region>  
 ```
 Create Azure Kubernetes Service (AKS) cluster:  
-- Log into Azure Portal  
+- Login to Azure Portal  
 - Create Resource Group  
 - Create Kubernetes Service  
 - Connect / Open Cloud Shell  
