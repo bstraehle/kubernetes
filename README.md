@@ -42,12 +42,12 @@ URL:
 <external-ip>:<port>  
 ```
 Useful Links:  
-- Website: <a href="https://microservices.io/">Microservices Architecture</a>  
-- Book: <a href="https://microservices.io/book">Microservices Patterns</a>  
-- Video (25 min): <a href="https://www.youtube.com/watch?v=BE77h7dmoQU">Kubernetes Documentary - Part 1/2</a>  
-- Video (32 min): <a href="https://www.youtube.com/watch?v=318elIq37PE">Kubernetes Documentary - Part 2/2</a>  
-- Blog Post: <a href="https://betterprogramming.pub/10-antipatterns-for-kubernetes-deployments-e97ce1199f2d">10 Anti-Patterns for Kubernetes Deployments</a>  
-- Blog Post: <a href="https://codefresh.io/containers/docker-anti-patterns/">Docker Anti-Patterns</a>  
-- Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/kubernetes-up-running-dive-into-the-future-of-infrastructure">O’Reilly: Kubernetes Up & Running - Dive into the Future of Infrastrucutre</a>  
-- Free eBook (information required): <a href="https://library.devops.com/oreilly-kubernetes-patterns-for-designing-cloud-native-apps">O’Reilly: Kubernetes Patterns for Designing Cloud-Native Apps</a>  
-- Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes">O’Reilly: Production Kubernetes</a>  
+- Website: <a href="https://microservices.io/" target="_blank">Microservices Architecture</a>  
+- Book: <a href="https://microservices.io/book" target="_blank">Microservices Patterns</a>  
+- Video (25 min): <a href="https://www.youtube.com/watch?v=BE77h7dmoQU" target="_blank">Kubernetes Documentary - Part 1/2</a>  
+- Video (32 min): <a href="https://www.youtube.com/watch?v=318elIq37PE" target="_blank">Kubernetes Documentary - Part 2/2</a>  
+- Blog Post: <a href="https://betterprogramming.pub/10-antipatterns-for-kubernetes-deployments-e97ce1199f2d" target="_blank">10 Anti-Patterns for Kubernetes Deployments</a>  
+- Blog Post: <a href="https://codefresh.io/containers/docker-anti-patterns/" target="_blank">Docker Anti-Patterns</a>  
+- Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/kubernetes-up-running-dive-into-the-future-of-infrastructure" target="_blank">O’Reilly: Kubernetes Up & Running - Dive into the Future of Infrastrucutre</a>  
+- Free eBook (information required): <a href="https://library.devops.com/oreilly-kubernetes-patterns-for-designing-cloud-native-apps" target="_blank">O’Reilly: Kubernetes Patterns for Designing Cloud-Native Apps</a>  
+- Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes" target="_blank">O’Reilly: Production Kubernetes</a>  
