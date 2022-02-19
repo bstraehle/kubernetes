@@ -10,8 +10,8 @@ gcloud container clusters get-credentials <cluster> --zone <zone> --project <pro
 ```
 Create Elastic Kubernetes Service (EKS) cluster:  
 - Login to AWS CloudShell  
-- Install kubectl  
-- Install eksctl  
+- <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Install kubectl</a>  
+- <a href="https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html">Install eksctl</a>  
 - (When done: Delete EKS cluster and ELB load balancer)  
 ```
 eksctl create cluster --name <name> --region <region>  
