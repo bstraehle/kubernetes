@@ -1,13 +1,3 @@
-Create Google Kubernetes Engine (GKE) cluster:  
-- Login to Google Cloud Console  
-- Create Project  
-- Enable Kubernetes Engine API  
-- Create Kubernetes Cluster  
-- Connect / Open Cloud Shell  
-- (When done: Shut down Project)  
-```
-gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
-```
 Create Elastic Kubernetes Service (EKS) cluster:  
 - Login to AWS CloudShell  
 - <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Install kubectl</a>  
@@ -26,6 +16,16 @@ Create Azure Kubernetes Service (AKS) cluster:
 ```
 az account set --subscription <subscription>  
 az aks get-credentials --resource-group <resource-group> --name <name>  
+```
+Create Google Kubernetes Engine (GKE) cluster:  
+- Login to Google Cloud Console  
+- Create Project  
+- Enable Kubernetes Engine API  
+- Create Kubernetes Cluster  
+- Connect / Open Cloud Shell  
+- (When done: Shut down Project)  
+```
+gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
 ```
 Create Kubernetes deployments and services:  
 ```
