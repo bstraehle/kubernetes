@@ -1,4 +1,4 @@
-See also https://github.com/bstraehle/terraform-docs  
+See https://github.com/bstraehle/terraform-docs  
 
 Create Elastic Kubernetes Service (EKS) cluster:  
 - Login to AWS CloudShell  
@@ -9,6 +9,7 @@ Create Elastic Kubernetes Service (EKS) cluster:
 eksctl create cluster --name <name> --region <region>  
 #eksctl delete cluster --name <name> --region <region>  
 ```
+
 Create Azure Kubernetes Service (AKS) cluster:  
 - Login to Azure Portal  
 - Create Resource Group  
@@ -19,6 +20,7 @@ Create Azure Kubernetes Service (AKS) cluster:
 az account set --subscription <subscription>  
 az aks get-credentials --resource-group <resource-group> --name <name>  
 ```
+
 Create Google Kubernetes Engine (GKE) cluster:  
 - Login to Google Cloud Console  
 - Create Project  
@@ -29,6 +31,7 @@ Create Google Kubernetes Engine (GKE) cluster:
 ```
 gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
 ```
+
 Create Kubernetes deployments and services:  
 ```
 git clone https://github.com/bstraehle/kubernetes.git  
