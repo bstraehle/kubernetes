@@ -57,3 +57,4 @@ Resources:
 - Free eBook (information required): <a href="https://library.devops.com/oreilly-kubernetes-patterns-for-designing-cloud-native-apps">O’Reilly: Kubernetes Patterns for Designing Cloud-Native Apps</a>  
 - Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/kubernetes-up-running-dive-into-the-future-of-infrastructure">O’Reilly: Kubernetes Up & Running</a>  
 - Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes">O’Reilly: Production Kubernetes</a>  
+- Free eBook (information required): <a href="https://more.suse.com/zero-trust-security-for-dummies.html">Zero Trust Container Security for Dummies</a>
