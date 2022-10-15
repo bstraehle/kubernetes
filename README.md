@@ -1,5 +1,3 @@
-See https://github.com/bstraehle/terraform-docs  
-
 Create Elastic Kubernetes Service (EKS) cluster:  
 - Login to AWS CloudShell  
 - <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Install kubectl</a>  
