@@ -56,3 +56,4 @@ Resources:
 - Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/kubernetes-up-running-dive-into-the-future-of-infrastructure">O’Reilly: Kubernetes Up & Running</a>  
 - Free eBook (information required): <a href="https://tanzu.vmware.com/content/ebooks/production-kubernetes">O’Reilly: Production Kubernetes</a>  
 - Free eBook (information required): <a href="https://more.suse.com/zero-trust-security-for-dummies.html">Zero Trust Container Security for Dummies</a>
+- Free eBook (information required): <a href="https://www.nginx.com/resources/library">NGINX Library (Multiple)</a>
