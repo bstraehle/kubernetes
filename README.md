@@ -1,4 +1,4 @@
-For Infrastructure as Code, see https://github.com/bstraehle/terraform-docs
+For Kubernetes and cloud-agnostic infrastructure as code, see https://github.com/bstraehle/terraform-docs
 
 Create Elastic Kubernetes Service (EKS) cluster:  
 - Login to AWS CloudShell  
