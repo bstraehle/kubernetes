@@ -1,5 +1,5 @@
-For Kubernetes infrastructure as code, see https://github.com/bstraehle/terraform-docs
-For Istio service mesh, see https://github.com/bstraehle/istio
+For Kubernetes infrastructure as code, see https://github.com/bstraehle/terraform-docs  
+For Istio service mesh, see https://github.com/bstraehle/istio  
 
 ## Create Elastic Kubernetes Service (EKS) Cluster  
 
