@@ -46,7 +46,6 @@ kubectl create -f mvc-app-deploy.yaml
 kubectl create -f mvc-app-service.yaml  
 kubectl get deployments,services  
 ```
-URL:  
 ```
 <external-ip>:<port>  
 ```
