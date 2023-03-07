@@ -1,6 +1,7 @@
-For Kubernetes and cloud-agnostic infrastructure as code, see https://github.com/bstraehle/terraform-docs
+For Kubernetes infrastructure as code, see https://github.com/bstraehle/terraform-docs
 
-Create Elastic Kubernetes Service (EKS) cluster:  
+## Create Elastic Kubernetes Service (EKS) Cluster  
+
 - Login to AWS CloudShell  
 - <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Install kubectl</a>  
 - <a href="https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html">Install eksctl</a>  
@@ -10,7 +11,8 @@ eksctl create cluster --name <name> --region <region>
 #eksctl delete cluster --name <name> --region <region>  
 ```
 
-Create Azure Kubernetes Service (AKS) cluster:  
+## Create Azure Kubernetes Service (AKS) Cluster  
+
 - Login to Azure Portal  
 - Create Resource Group  
 - Create Kubernetes Service  
@@ -21,7 +23,8 @@ az account set --subscription <subscription>
 az aks get-credentials --resource-group <resource-group> --name <name>  
 ```
 
-Create Google Kubernetes Engine (GKE) cluster:  
+## Create Google Kubernetes Engine (GKE) Cluster  
+
 - Login to Google Cloud Console  
 - Create Project  
 - Enable Kubernetes Engine API  
@@ -32,7 +35,8 @@ Create Google Kubernetes Engine (GKE) cluster:
 gcloud container clusters get-credentials <cluster> --zone <zone> --project <project>  
 ```
 
-Create Kubernetes deployments and services:  
+## Create Kubernetes Deployments and Services  
+
 ```
 git clone https://github.com/bstraehle/kubernetes.git  
 cd kubernetes  
@@ -46,7 +50,9 @@ URL:
 ```
 <external-ip>:<port>  
 ```
-Resources:  
+
+## Resources
+
 - Website: <a href="https://microservices.io/">Microservices Architecture</a>  
 - Book: <a href="https://microservices.io/book">Microservices Patterns</a>  
 - Video (25 min): <a href="https://www.youtube.com/watch?v=BE77h7dmoQU">Kubernetes Documentary - Part 1/2</a>  
