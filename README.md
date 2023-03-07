@@ -1,7 +1,7 @@
 For Kubernetes infrastructure as code, see https://github.com/bstraehle/terraform-docs  
 For Istio service mesh, see https://github.com/bstraehle/istio  
 
-## Create Elastic Kubernetes Service (EKS) Cluster  
+## Create Elastic Kubernetes Service Cluster  
 
 - Login to AWS CloudShell  
 - <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Install kubectl</a>  
@@ -12,7 +12,7 @@ eksctl create cluster --name <name> --region <region>
 #eksctl delete cluster --name <name> --region <region>  
 ```
 
-## Create Azure Kubernetes Service (AKS) Cluster  
+## Create Azure Kubernetes Service Cluster  
 
 - Login to Azure Portal  
 - Create Resource Group  
@@ -24,7 +24,7 @@ az account set --subscription <subscription>
 az aks get-credentials --resource-group <resource-group> --name <name>  
 ```
 
-## Create Google Kubernetes Engine (GKE) Cluster  
+## Create Google Kubernetes Engine Cluster  
 
 - Login to Google Cloud Console  
 - Create Project  
