@@ -1,5 +1,3 @@
-For Kubernetes infrastructure as code, see https://github.com/bstraehle/terraform-docs
-
 ## Create Elastic Kubernetes Service Cluster  
 
 - Login to AWS CloudShell  
