@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    # Weekly, to catch breaking changes in the :latest images.
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+env:
+  KUBERNETES_VERSION: 1.37.0
+  KUBECONFORM_VERSION: v0.8.0
+  KUBECONFORM_SHA256: 9bc2bffbf71f261128533edaf912153948b7ff238f9a531ae6d34466ec287883
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install kubeconform
+        run: |
+          curl -fsSLo kubeconform.tar.gz "https://github.com/yannh/kubeconform/releases/download/${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz"
+          echo "${KUBECONFORM_SHA256}  kubeconform.tar.gz" | sha256sum --check
+          tar -xzf kubeconform.tar.gz kubeconform && sudo mv kubeconform /usr/local/bin/
+      - run: kubectl kustomize manifests > rendered.yaml
+      - run: kubeconform -strict -summary -kubernetes-version "${KUBERNETES_VERSION}" rendered.yaml
+
+  e2e:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: helm/kind-action@ea822c7bf1874f08e5a491df991c228edffc3376 # v1.15.2
+        with:
+          version: v0.33.0
+          node_image: kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
+      - run: kubectl apply -k manifests
+      - run: |
+          kubectl -n demo rollout status deployment/rest-api --timeout=300s
+          kubectl -n demo rollout status deployment/mvc-app --timeout=300s
+      - name: Check endpoints
+        run: |
+          kubectl -n demo port-forward service/mvc-app-service 8000:8000 &
+          kubectl -n demo port-forward service/rest-api-service 8001:8001 &
+          for url in http://localhost:8000/ http://localhost:8000/Demo/List http://localhost:8001/Demo; do
+            curl --fail --silent --show-error --retry 30 --retry-delay 2 --retry-all-errors --max-time 10 -o /dev/null "$url"
+            echo "OK $url"
+          done
+      - if: failure()
+        run: |
+          kubectl -n demo get all,events
+          kubectl -n demo describe pods
+          kubectl -n demo logs --all-containers --prefix -l app.kubernetes.io/part-of=demo --tail=100
