@@ -53,7 +53,7 @@ az aks get-credentials --resource-group <resource-group> --name <name>
 Google GKE (in [Cloud Shell](https://cloud.google.com/shell/docs), with the Kubernetes Engine API enabled)
 
 ```shell
-gcloud container clusters create-auto <name> --region <region> --project <project>
+gcloud container clusters create <name> --region <region> --num-nodes 1 --project <project>
 gcloud container clusters get-credentials <name> --region <region> --project <project>
 ```
 
