@@ -11,7 +11,10 @@ metadata:
   labels:
     app.kubernetes.io/name: mvc-app
 spec:
-  replicas: 2
+  # One replica: the app's antiforgery tokens are encrypted with a per-pod
+  # data-protection key, so a form loaded from one replica fails (HTTP 400)
+  # when submitted to another. Scaling out needs a shared key store.
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: mvc-app
@@ -87,13 +90,3 @@ spec:
     - name: http
       port: 8000
       targetPort: http
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: mvc-app
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: mvc-app

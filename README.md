@@ -20,10 +20,9 @@ All resources are in the `demo` namespace ([`manifests/`](manifests)):
 
 | Resource | MVC app | REST API |
 | --- | --- | --- |
-| Deployment (2 replicas) | `mvc-app` | `rest-api` |
+| Deployment (1 replica, see below) | `mvc-app` | `rest-api` |
 | Service | `mvc-app-service` (LoadBalancer, port 8000) | `rest-api-service` (ClusterIP, port 8001) |
 | ServiceAccount (no API token mounted) | `mvc-app` | `rest-api` |
-| PodDisruptionBudget (min 1 available) | `mvc-app` | `rest-api` |
 
 The MVC app calls the API at `http://rest-api-service:8001`.
 
@@ -31,6 +30,7 @@ The MVC app calls the API at `http://rest-api-service:8001`.
 
 - The namespace enforces the [restricted Pod Security Standard](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted). Pods run as non-root (UID 1654) with a read-only root filesystem, no privilege escalation, all capabilities dropped, and the `RuntimeDefault` seccomp profile.
 - Readiness and liveness probes (`/` for the MVC app, `/Demo` for the API), plus CPU and memory requests and limits.
+- One replica per app, because both apps keep state in the pod. The API stores its records in memory, and the MVC app encrypts form antiforgery tokens with a per-pod key. With more replicas, records added through one API pod are missing on the other, and forms fail with HTTP 400 when submitted to a different MVC pod. Scaling out needs app changes: an external data store for the API, and a shared [data-protection key store](https://learn.microsoft.com/aspnet/core/security/data-protection/configuration/overview) for the MVC app.
 
 ## 2. Create a Cluster
 

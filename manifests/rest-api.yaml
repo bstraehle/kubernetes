@@ -11,7 +11,9 @@ metadata:
   labels:
     app.kubernetes.io/name: rest-api
 spec:
-  replicas: 2
+  # One replica: the API keeps its records in memory per process, so a
+  # second replica would serve a different data set.
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: rest-api
@@ -83,13 +85,3 @@ spec:
     - name: http
       port: 8001
       targetPort: http
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: rest-api
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: rest-api
